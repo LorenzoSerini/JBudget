@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="596.0" prefWidth="1127.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicam.cs.pa.jbudget097855.mviewc.JavaFXJBudgetController">
+   <center>
+      <TabPane prefHeight="545.0" prefWidth="675.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="TAGS">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="434.0" prefWidth="482.0">
+                     <children>
+                        <VBox layoutX="-4.0" prefHeight="533.0" prefWidth="631.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-4.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <TableView fx:id="tagTable" prefHeight="535.0" prefWidth="631.0">
+                                <columns>
+                                  <TableColumn fx:id="columnNameTagTable" prefWidth="150.66665649414062" text="NAME" />
+                                  <TableColumn fx:id="columnDescriptionTagTable" minWidth="0.0" prefWidth="477.3333740234375" text="DESCRIPTION" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="ACCOUNTS">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="501.0" prefWidth="630.0">
+                           <children>
+                              <TableView fx:id="accountsTable" prefHeight="501.0" prefWidth="494.0">
+                                <columns>
+                                    <TableColumn fx:id="columnIdInAccountTable" prefWidth="127.33334863185883" text="ID" />
+                                  <TableColumn fx:id="columnNameInAccountTable" prefWidth="140.6666717529297" text="NAME" />
+                                  <TableColumn fx:id="columnDescriptionInAccountTable" prefWidth="226.00006103515625" text="DESCRIPTION" />
+                                    <TableColumn fx:id="columnBalanceInAccountTable" prefWidth="136.66659545898438" text="BALANCE" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+          <Tab text="TRANSACTIONS">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutY="22.0" prefHeight="265.0" prefWidth="626.0">
+                           <children>
+                              <TableView fx:id="transactionsTable" prefHeight="245.0" prefWidth="516.0">
+                                <columns>
+                                  <TableColumn fx:id="transactionIdColumn" prefWidth="86.00003051757812" text="ID" />
+                                  <TableColumn fx:id="transactionDateColumn" minWidth="0.0" prefWidth="86.66668701171875" text="DATE" />
+                                    <TableColumn fx:id="transactionAmountColumn" minWidth="0.0" prefWidth="110.0" text="AMOUNT" />
+                                    <TableColumn fx:id="transactionMovementsColumn" prefWidth="341.333251953125" text="MOVEMENTS" />
+                                </columns>
+                              </TableView>
+                              <Label alignment="CENTER" contentDisplay="TOP" prefHeight="21.0" prefWidth="313.0" text="MOVEMENTS TABLE">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></Label>
+                           </children>
+                        </VBox>
+                        <Label alignment="CENTER" contentDisplay="TOP" layoutX="1.0" layoutY="1.0" prefHeight="21.0" prefWidth="313.0" text="TRANSACTIONS TABLE" />
+                        <TableView fx:id="movementsTable" layoutY="290.0" prefHeight="156.0" prefWidth="623.0">
+                          <columns>
+                              <TableColumn fx:id="movementAccountColumn" prefWidth="148.00006103515625" text="ACCOUNT" />
+                            <TableColumn fx:id="movementTypeColumn" prefWidth="85.33331298828125" text="TYPE" />
+                            <TableColumn fx:id="movementDescriptionColumn" prefWidth="148.0" text="DESCRIPTION" />
+                              <TableColumn fx:id="movementAmountColumn" prefWidth="122.66668701171875" text="AMOUNT" />
+                              <TableColumn fx:id="movementTagsColumn" prefWidth="113.99993896484375" text="TAGS" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+            <Tab text="SCHEDULERS">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="schedulersTable" prefHeight="474.0" prefWidth="626.0">
+                          <columns>
+                            <TableColumn fx:id="schedulerDateColumn" prefWidth="75.0" text="DATE" />
+                            <TableColumn fx:id="schedulerDescriptionColumn" prefWidth="139.33331298828125" text="DESCRIPTION" />
+                              <TableColumn fx:id="schedulerTransactionsColumn" prefWidth="407.33331298828125" text="TRANSACTIONS" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="REPORTS">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="489.0" prefWidth="560.0">
+                     <children>
+                        <ListView fx:id="reportsList" prefHeight="473.0" prefWidth="626.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+   <left>
+      <TabPane prefHeight="510.0" prefWidth="497.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="TAG">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="88.0" layoutY="14.0" prefHeight="17.0" prefWidth="303.0" text="ADD TAG" underline="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tagName" layoutX="14.0" layoutY="47.0" promptText="tag name" />
+                        <TextField fx:id="tagDescription" layoutX="14.0" layoutY="100.0" promptText="tag description" />
+                        <Button layoutX="317.0" layoutY="73.0" mnemonicParsing="false" onAction="#addTagPressed" prefHeight="27.0" prefWidth="120.0" text="Add" />
+                        <Button layoutX="315.0" layoutY="238.0" mnemonicParsing="false" onAction="#removeTagPressed" prefHeight="17.0" prefWidth="123.0" text="Remove" />
+                        <Label alignment="CENTER" layoutX="88.0" layoutY="172.0" prefHeight="17.0" prefWidth="303.0" text="REMOVE TAG" underline="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="TOP_LEFT" layoutX="12.0" layoutY="223.0" prefHeight="39.0" prefWidth="221.0" text="Select a tag with the cursor and press on&#10;remove button to remove a tag" textAlignment="JUSTIFY" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="ACCOUNT">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="79.0" layoutY="14.0" prefHeight="17.0" prefWidth="303.0" text="ADD ACCOUNT" underline="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="accountName" layoutX="14.0" layoutY="87.0" prefHeight="25.0" prefWidth="193.0" promptText="Account name" />
+                        <TextField fx:id="accountDescription" layoutX="14.0" layoutY="131.0" prefHeight="25.0" prefWidth="194.0" promptText="Account description" />
+                        <TextField fx:id="accountOpeningBalance" layoutX="14.0" layoutY="173.0" prefHeight="25.0" prefWidth="195.0" promptText="Opening balance" />
+                        <RadioButton fx:id="assetsBtn" layoutX="121.0" layoutY="53.0" mnemonicParsing="false" text="Assets Type">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="AccountType" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="liabilitiesBtn" layoutX="290.0" layoutY="53.0" mnemonicParsing="false" text="Liabilities Type" toggleGroup="$AccountType" />
+                        <Button layoutX="310.0" layoutY="131.0" mnemonicParsing="false" onAction="#addAccountPressed" prefHeight="25.0" prefWidth="109.0" text="Add" />
+                        <Button layoutX="309.0" layoutY="294.0" mnemonicParsing="false" onAction="#movementsStagePressed" prefHeight="22.0" prefWidth="111.0" text="View Movements" />
+                        <Label alignment="CENTER" layoutX="79.0" layoutY="238.0" prefHeight="17.0" prefWidth="303.0" text="SHOW ACCOUNT MOVEMENTS" underline="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="TOP_LEFT" layoutX="10.0" layoutY="287.0" prefHeight="39.0" prefWidth="259.0" text="Select an account with the cursor and press on&#10;View Movement to see the account movements" textAlignment="JUSTIFY" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="MOVEMENT">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="89.0" layoutY="14.0" prefHeight="17.0" prefWidth="303.0" text="ADD MOVEMENT" underline="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <RadioButton fx:id="creditBtn" layoutX="136.0" layoutY="45.0" mnemonicParsing="false" text="Credit">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="MovementType" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="debitBtn" layoutX="271.0" layoutY="45.0" mnemonicParsing="false" text="Debit" toggleGroup="$MovementType" />
+                        <TextField fx:id="movementDescription" layoutX="15.0" layoutY="77.0" promptText="Description" />
+                        <TextField fx:id="movementAmount" layoutX="15.0" layoutY="123.0" promptText="Amount" />
+                        <TextField fx:id="movementAccount" editable="false" layoutX="15.0" layoutY="170.0" promptText="Account Index" />
+                        <Label layoutX="189.0" layoutY="106.0" prefHeight="33.0" prefWidth="291.0" text="Select an account (in Accounts View)  with the cursor &#10;and press on Set  Account button to set an account" />
+                        <Button layoutX="359.0" layoutY="170.0" mnemonicParsing="false" onAction="#setAccountPressed" prefHeight="25.0" prefWidth="105.0" text="Set Account" />
+                        <Button layoutX="186.0" layoutY="215.0" mnemonicParsing="false" onAction="#newMovementPressed" prefHeight="26.0" prefWidth="123.0" text="Create Movement" />
+                        <Label alignment="CENTER" layoutX="96.0" layoutY="256.0" prefHeight="17.0" prefWidth="303.0" text="ADD TAG IN MOVEMENT" underline="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="2.0" layoutY="283.0" prefHeight="55.0" prefWidth="324.0" text="Select a movement (in Movements Table)  with the cursor;&#10;select a tag (in Tag View) with the cursor and&#10;press on Set Tag button to add a tag to selected movement" />
+                        <Button layoutX="358.0" layoutY="298.0" mnemonicParsing="false" onAction="#setTagPressed" prefHeight="25.0" prefWidth="108.0" text="Set Tag" />
+                        <Label alignment="CENTER" layoutX="89.0" layoutY="363.0" prefHeight="17.0" prefWidth="303.0" text="CLEAR MOVEMENTS LIST" underline="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="321.0" layoutY="407.0" mnemonicParsing="false" onAction="#deleteMovementPressed" prefHeight="27.0" prefWidth="155.0" text="Delete Movement" />
+                        <Button layoutX="320.0" layoutY="457.0" mnemonicParsing="false" onAction="#clearMovementsPressed" prefHeight="30.0" prefWidth="158.0" text="Clear Movements Table" />
+                        <Label layoutX="7.0" layoutY="404.0" prefHeight="34.0" prefWidth="311.0" text="Select a movement (in Movements Table)  with the cursor&#10;and press on Delete Movement" />
+                        <Label layoutX="5.0" layoutY="461.0" prefHeight="21.0" prefWidth="167.0" text="Clears the movements table" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="TRANSACTION">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="452.0" prefWidth="413.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="12.0" layoutY="28.0" prefHeight="20.0" prefWidth="458.0" text="CREATE TRANSACTION" underline="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="318.0" layoutY="78.0" mnemonicParsing="false" onAction="#createTransactionPressed" prefHeight="25.0" prefWidth="151.0" text="Create Transaction" />
+                        <Label layoutX="14.0" layoutY="71.0" prefHeight="39.0" prefWidth="275.0" text="Press on Create Transaction to create a transaction&#10;with each movement present in movements list." />
+                        <Label fx:id="transactionErrorMessage" layoutX="68.0" layoutY="121.0" prefHeight="23.0" prefWidth="343.0" textFill="#c83232" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="SCHEDULER">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="schedulerDescription" layoutX="28.0" layoutY="53.0" prefHeight="25.0" prefWidth="171.0" promptText="Description" />
+                        <Button layoutX="369.0" layoutY="114.0" mnemonicParsing="false" onAction="#newSchedulerPressed" prefHeight="25.0" prefWidth="102.0" text="New Scheduler" />
+                        <Button layoutX="369.0" layoutY="223.0" mnemonicParsing="false" onAction="#addTransactionInSchedulerPressed" text="Add Transaction" />
+                        <Button layoutX="371.0" layoutY="336.0" mnemonicParsing="false" onAction="#schedulePressed" prefHeight="25.0" prefWidth="97.0" text="Schedule" />
+                        <DatePicker fx:id="schedulerDate" layoutX="27.0" layoutY="102.0" />
+                        <Label alignment="CENTER" layoutX="15.0" layoutY="14.0" prefHeight="20.0" prefWidth="458.0" text="CREATE SCHEDULER TRANSACTION" underline="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="22.0" layoutY="161.0" prefHeight="20.0" prefWidth="458.0" text="ADD TRANSACTION IN SCHEDULER" underline="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="22.0" layoutY="294.0" prefHeight="20.0" prefWidth="458.0" text="SCHEDULED OPERATION" underline="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="18.0" layoutY="203.0" prefHeight="66.0" prefWidth="334.0" text="Select a scheduler (in Schedulers View)  with the cursor;&#10;select a transaction (in transaction View) with the cursor and&#10;press on Add Transaction button to add a transaction to&#10;selected scheduler" />
+                        <Label layoutX="18.0" layoutY="329.0" prefHeight="53.0" prefWidth="259.0" text="Press on schedule to scheduled all transactions&#10;with past dates " />
+                        <Label fx:id="schedulerErrorMessage" layoutX="18.0" layoutY="418.0" prefHeight="21.0" prefWidth="465.0" textFill="#c83232" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="BUDGET &amp; REPORT">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="budgetDescription" layoutX="27.0" layoutY="46.0" promptText="Budget Description" />
+                        <Button layoutX="320.0" layoutY="46.0" mnemonicParsing="false" onAction="#setBudgetDescriptionPressed" prefHeight="26.0" prefWidth="139.0" text="Set Description" />
+                        <TextField fx:id="expectedValue" layoutX="27.0" layoutY="161.0" promptText="Expected Value" />
+                        <Button layoutX="322.0" layoutY="161.0" mnemonicParsing="false" onAction="#setExpectedValuePressed" prefHeight="25.0" prefWidth="136.0" text="Set Expected Value" />
+                        <Button layoutX="331.0" layoutY="353.0" mnemonicParsing="false" onAction="#createReportPressed" prefHeight="27.0" prefWidth="118.0" text="Create Report" />
+                        <TextField fx:id="budgetDescriptionView" editable="false" layoutX="81.0" layoutY="245.0" />
+                        <ListView fx:id="budgetMapView" layoutX="15.0" layoutY="271.0" prefHeight="220.0" prefWidth="151.0" />
+                        <ListView fx:id="budgetValueView" layoutX="166.0" layoutY="271.0" prefHeight="220.0" prefWidth="104.0" />
+                        <Label alignment="CENTER" layoutX="20.0" layoutY="14.0" prefHeight="20.0" prefWidth="458.0" text="MY BUDGET" underline="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="21.0" layoutY="82.0" prefHeight="20.0" prefWidth="458.0" text="MY BUDGET EXPECTED VALUE" underline="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="TOP_LEFT" layoutX="8.0" layoutY="109.0" prefHeight="33.0" prefWidth="484.0" text="Select a tag (in Tag View) with the cursor, set expected value and press on&#10;Set Expected Value" textAlignment="JUSTIFY" />
+                        <Label alignment="CENTER" layoutX="41.0" layoutY="218.0" prefHeight="20.0" prefWidth="227.0" text="TAG &amp; VALUE LIST" underline="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </left>
+   <top>
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="65.0" prefWidth="1127.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="308.0" layoutY="-1.0" prefHeight="31.0" prefWidth="367.0" text="JBUDGET" textFill="#2a55b9">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <Button mnemonicParsing="false" onAction="#savePressed" prefHeight="30.0" prefWidth="123.0" text="Save All">
+                     <font>
+                        <Font name="System Bold Italic" size="13.0" />
+                     </font></Button>
+                  <Label fx:id="saveMessage" layoutX="583.0" layoutY="1.0" prefHeight="28.0" prefWidth="541.0" textFill="#e30b0b">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></Label>
+                  <Button layoutX="160.0" mnemonicParsing="false" onAction="#deleteAllPressed" prefHeight="29.0" prefWidth="125.0" text="Delete All">
+                     <font>
+                        <Font name="System Bold Italic" size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="119.0" prefWidth="1125.0">
+               <children>
+                  <SplitPane dividerPositions="0.4380924170616114" prefHeight="32.0" prefWidth="1127.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" prefHeight="31.0" prefWidth="491.0" text="CONTROLLERS" textFill="#d11e1e">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-5.0" layoutY="-1.0" prefHeight="32.0" prefWidth="633.0" text="VIEWS" textFill="#d11e1e">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </top>
+</BorderPane>
